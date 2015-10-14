@@ -132,10 +132,10 @@ namespace Radio.PL1167
 
             spiConnection.CS = false;
 
-            byte[] buffer = new byte[transmitBuffer.Length + 3];
+            byte[] buffer = new byte[transmitBuffer.Length + 2];
             buffer[0] = 0x32;
-            buffer[1] = (byte)(transmitBuffer.Length + 1);
-            //buffer[1] = (byte)(transmitBuffer.Length);
+            //buffer[1] = (byte)(transmitBuffer.Length + 1);
+            buffer[1] = (byte)(transmitBuffer.Length);
             for (int i = 0; i < transmitBuffer.Length; i++)
             { 
                 buffer[i + 2] = transmitBuffer[i];

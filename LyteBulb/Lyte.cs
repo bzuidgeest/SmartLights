@@ -67,13 +67,15 @@ namespace SmartLights.Lyte
         */
         public bool TurnOff()
         {
-            byte dimmerSteps = 10;
+            byte dimmerSteps = 0;
             Command commandToSend = new Command();
 
             commandToSend.commandType = (CommandType)((byte)transmissionMode | (byte)CommandType.SwitchOff);
             commandToSend.destinationAddress1 = upperAddressByte;
             commandToSend.destinationAddress2 = lowerAddressByte;
-            //commandToSend.frameNumber = frameCounter++;
+
+            if (transmissionMode == TransmissionMode.Unicast)
+                commandToSend.frameNumber = frameCounter++;
 
             if (transmissionMode == TransmissionMode.Unicast)
                 commandToSend.param1 = (byte)((dimmerSteps <= Constants.PROTOCOL_DIMMER_STEPS) ? dimmerSteps : Constants.PROTOCOL_DIMMER_STEPS);
@@ -112,16 +114,18 @@ namespace SmartLights.Lyte
         */
         public bool TurnOn()
         {
-            byte dimmerSteps = 10;
+            byte dimmerSteps = 0;
             Command commandToSend = new Command();
 
             commandToSend.commandType = (CommandType)((byte)transmissionMode | (byte)CommandType.SwitchOn);
             commandToSend.destinationAddress1 = upperAddressByte;
             commandToSend.destinationAddress2 = lowerAddressByte;
-            //commandToSend.frameNumber = frameCounter++;
 
             if (transmissionMode == TransmissionMode.Unicast)
+            {
+                commandToSend.frameNumber = frameCounter++;
                 commandToSend.param1 = (byte)((dimmerSteps <= Constants.PROTOCOL_DIMMER_STEPS) ? dimmerSteps : Constants.PROTOCOL_DIMMER_STEPS);
+            }
             else
                 commandToSend.param1 = 0;
 
@@ -160,19 +164,22 @@ namespace SmartLights.Lyte
         */
         public bool SetRGB(SmartLightColor color)
         {
-            byte dimmerSteps = 10;
+            byte dimmerSteps = 0;
             Command commandToSend = new Command();
 
-            commandToSend.commandType = (CommandType)((byte)transmissionMode | (byte)CommandType.SwitchOn);
+            commandToSend.commandType = (CommandType)((byte)transmissionMode | (byte)CommandType.SetRGB);
             commandToSend.destinationAddress1 = upperAddressByte;
             commandToSend.destinationAddress2 = lowerAddressByte;
-            commandToSend.frameNumber = frameCounter++;
+            
             commandToSend.param1 = color.red;
             commandToSend.param2 = color.green;
             commandToSend.param3 = color.blue;
 
             if (transmissionMode == TransmissionMode.Unicast)
+            {
                 commandToSend.param4 = (byte)((dimmerSteps <= Constants.PROTOCOL_DIMMER_STEPS) ? dimmerSteps : Constants.PROTOCOL_DIMMER_STEPS);
+                commandToSend.frameNumber = frameCounter++;
+            }
             else
                 commandToSend.param4 = 0;
 
@@ -209,17 +216,20 @@ namespace SmartLights.Lyte
         */
         public bool SetWhite(SmartLightColor color)
         {
-            byte dimmerSteps = 10;
+            byte dimmerSteps = 0;
             Command commandToSend = new Command();
 
             commandToSend.commandType = (CommandType)((byte)transmissionMode | (byte)CommandType.Brightness);
             commandToSend.destinationAddress1 = upperAddressByte;
             commandToSend.destinationAddress2 = lowerAddressByte;
-            commandToSend.frameNumber = frameCounter++;
+            
             commandToSend.param1 = color.white;
 
             if (transmissionMode == TransmissionMode.Unicast)
+            {
                 commandToSend.param2 = (byte)((dimmerSteps <= Constants.PROTOCOL_DIMMER_STEPS) ? dimmerSteps : Constants.PROTOCOL_DIMMER_STEPS);
+                commandToSend.frameNumber = frameCounter++;
+            }
             else
                 commandToSend.param2 = 0;
             commandToSend.param3 = 0;

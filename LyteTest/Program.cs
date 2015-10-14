@@ -29,11 +29,17 @@ namespace LyteTest
 
             controller.Add((short)0, lyte);
 
+            lyte.TurnOn();
+
             while(true)
             {
-                lyte.TurnOff();
+                //lyte.TurnOff();
+                lyte.SetRGB(new SmartLights.SmartLightColor() { blue = 0, green = 255, red = 0 });
+                lyte.SetWhite(new SmartLights.SmartLightColor() { white = 50 });
                 Thread.Sleep(1000);
-                lyte.TurnOn();
+                //lyte.TurnOn();
+                lyte.SetRGB(new SmartLights.SmartLightColor() { blue = 0, green = 0, red = 255 });
+                lyte.SetWhite(new SmartLights.SmartLightColor() { white = 180 });
 
                 if (Console.KeyAvailable)
                     break;

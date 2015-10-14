@@ -19,6 +19,7 @@ namespace SmartLights.Lyte
         public byte param3;
         public byte param4;
         public byte crc;
+        public byte unknown;
 
         public void CalculateCRC()
         {
@@ -37,14 +38,24 @@ namespace SmartLights.Lyte
         {
             StringBuilder result = new StringBuilder();
             result.Append(commandType.ToString());
+            result.Append(',');
             result.Append(destinationAddress1.ToString());
+            result.Append(',');
             result.Append(destinationAddress2.ToString());
+            result.Append(',');
             result.Append(frameNumber.ToString());
+            result.Append(',');
             result.Append(param1.ToString());
+            result.Append(',');
             result.Append(param2.ToString());
+            result.Append(',');
             result.Append(param3.ToString());
+            result.Append(',');
             result.Append(param4.ToString());
+            result.Append(',');
             result.Append(crc.ToString());
+            result.Append(',');
+            result.Append(unknown.ToString());
             return result.ToString();
         }
     }
