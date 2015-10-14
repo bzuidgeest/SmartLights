@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyteTest", "LyteTest\LyteTest.csproj", "{B799696A-D7DA-4C1E-8346-3635DD1D316F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radio.PL1167", "PL1167\Radio.PL1167.csproj", "{55D1EBE3-A518-4112-B407-14FF9E082683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLights.Lyte", "LyteBulb\SmartLights.Lyte.csproj", "{5764D1A6-0C0C-4185-9029-807A2405FE1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{5EC6268C-BB27-47DC-82DD-7D510DF8EBC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLights", "SmartLights\SmartLights.csproj", "{749E9AC7-202A-471E-ADBC-A44A528BF9EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1A375D94-C03D-475B-A8FA-2FDFAFE47ED4}"
+	ProjectSection(SolutionItems) = preProject
+		License.txt = License.txt
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B799696A-D7DA-4C1E-8346-3635DD1D316F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B799696A-D7DA-4C1E-8346-3635DD1D316F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B799696A-D7DA-4C1E-8346-3635DD1D316F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B799696A-D7DA-4C1E-8346-3635DD1D316F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55D1EBE3-A518-4112-B407-14FF9E082683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55D1EBE3-A518-4112-B407-14FF9E082683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55D1EBE3-A518-4112-B407-14FF9E082683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55D1EBE3-A518-4112-B407-14FF9E082683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5764D1A6-0C0C-4185-9029-807A2405FE1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5764D1A6-0C0C-4185-9029-807A2405FE1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5764D1A6-0C0C-4185-9029-807A2405FE1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5764D1A6-0C0C-4185-9029-807A2405FE1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC6268C-BB27-47DC-82DD-7D510DF8EBC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC6268C-BB27-47DC-82DD-7D510DF8EBC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC6268C-BB27-47DC-82DD-7D510DF8EBC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC6268C-BB27-47DC-82DD-7D510DF8EBC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{749E9AC7-202A-471E-ADBC-A44A528BF9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{749E9AC7-202A-471E-ADBC-A44A528BF9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{749E9AC7-202A-471E-ADBC-A44A528BF9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{749E9AC7-202A-471E-ADBC-A44A528BF9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
