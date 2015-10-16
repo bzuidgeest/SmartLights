@@ -13,7 +13,7 @@ namespace SmartLights.Lyte
         private byte upperAddressByte;
         private byte lowerAddressByte;
         private TransmissionMode transmissionMode;
-        private byte frameCounter;
+        private byte frameCounter = 1;
 
         public SmartLightColor Color
         {

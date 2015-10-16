@@ -34,12 +34,13 @@ namespace LyteTest
             while(true)
             {
                 //lyte.TurnOff();
-                lyte.SetRGB(new SmartLights.SmartLightColor() { blue = 0, green = 255, red = 0 });
-                lyte.SetWhite(new SmartLights.SmartLightColor() { white = 50 });
+                lyte.SetRGB(new SmartLights.SmartLightColor() { blue = 0, green = 0, red = 255 });
+                //lyte.SetWhite(new SmartLights.SmartLightColor() { white = 50 });
                 Thread.Sleep(1000);
                 //lyte.TurnOn();
-                lyte.SetRGB(new SmartLights.SmartLightColor() { blue = 0, green = 0, red = 255 });
-                lyte.SetWhite(new SmartLights.SmartLightColor() { white = 180 });
+                lyte.SetRGB(new SmartLights.SmartLightColor() { blue = 0, green = 255, red = 0 });
+                //lyte.SetWhite(new SmartLights.SmartLightColor() { white = 180 });
+                Thread.Sleep(1000);
 
                 if (Console.KeyAvailable)
                     break;

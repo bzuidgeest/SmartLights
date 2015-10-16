@@ -11,6 +11,8 @@ namespace SmartLights.Lyte
     public struct Command
     {
         public CommandType commandType;
+        // Marco of authometion says commandtype enum should be two bytes
+        //public byte commandType2;
         public byte destinationAddress1;
         public byte destinationAddress2;
         public byte frameNumber;
@@ -19,7 +21,8 @@ namespace SmartLights.Lyte
         public byte param3;
         public byte param4;
         public byte crc;
-        public byte unknown;
+        // extra byte to compensate for bug in lyte lamp firmware
+        public byte bug;
 
         public void CalculateCRC()
         {
@@ -32,6 +35,7 @@ namespace SmartLights.Lyte
             crc ^= param2;
             crc ^= param3;
             crc ^= param4;
+            //crc ^= unknown;
         }
 
         public override string ToString()
@@ -55,7 +59,7 @@ namespace SmartLights.Lyte
             result.Append(',');
             result.Append(crc.ToString());
             result.Append(',');
-            result.Append(unknown.ToString());
+            result.Append(bug.ToString());
             return result.ToString();
         }
     }

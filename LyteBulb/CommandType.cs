@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartLights.Lyte
 {
-    public enum CommandType : byte
+    public enum CommandType : short
     {
         NoCommandSend = 0x0,  //                 bit[4-0] -> Command number
         SwitchOn = 0x1,
