@@ -145,14 +145,13 @@ namespace Radio.PL1167
 
             spiConnection.CS = true;
 
-            Thread.Sleep(10);
+            //Thread.Sleep(10);
 
             SetTXMode();
 
             PL1167Status status = ReadStatusReg();
             //while (digitalRead(PL1167_PKT_PIN) == 0) ;
             //	delayMicroseconds(400);
-            //byte[] test = ReadRXFIFO();
         }
         
         public override byte[] ReadRXFIFO()

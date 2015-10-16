@@ -1,4 +1,5 @@
-﻿using Radio.PL1167;
+﻿using NAudio.Wave;
+using Radio.PL1167;
 using SmartLights.Lyte;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace LyteTest
 {
     class Program
     {
+        static WasapiLoopbackCapture waveIn;
+
         static void Main(string[] args)
         {
             BPPL1167 radio = new BPPL1167();
@@ -31,7 +34,11 @@ namespace LyteTest
 
             lyte.TurnOn();
 
-            while(true)
+            //waveIn = new WasapiLoopbackCapture();
+            //waveIn.DataAvailable += InputBufferToFileCallback;
+            //waveIn.StartRecording();
+
+            while (true)
             {
                 //lyte.TurnOff();
                 lyte.SetRGB(new SmartLights.SmartLightColor() { blue = 0, green = 0, red = 255 });
@@ -46,5 +53,12 @@ namespace LyteTest
                     break;
             }
          }
+
+        public static void InputBufferToFileCallback(object sender, WaveInEventArgs e)
+        {
+            // The recorder bytes can be found in e.Buffer
+            // The number of bytes recorded can be found in e.BytesRecorded
+            // Process the audio data any way you wish...
+        }
     }
 }
